@@ -2,7 +2,7 @@ import numpy as np
 
 
 def getStateActions(env):
-    training_rate = 0.9
+    training_rate = 1
     gamma = 0.95
     episodes = 100000
 
