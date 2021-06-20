@@ -1,11 +1,13 @@
 import gym
-import rlutil
-import numpy as np
+import dpprob
+import egreedy
 
-env = gym.make("FrozenLake8x8-v0")
-# env = gym.make("FrozenLake-v0")
 
-stateValues, stateActions = rlutil.getStateValues(env)
+# env = gym.make("FrozenLake8x8-v0")
+env = gym.make("FrozenLake-v0")
+
+# stateActions = dpprob.getStateActions(env)
+stateActions = egreedy.getStateActions(env)
 
 num_steps = 100
 success = 0

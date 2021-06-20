@@ -3,7 +3,7 @@ import numpy
 import numpy as np
 
 
-def getStateValues(env):
+def getStateActions(env):
     stateValues = np.zeros(env.observation_space.n)
     savedStateValues = np.copy(stateValues)
     finalQMatrix = np.zeros((env.observation_space.n, env.action_space.n))
@@ -40,7 +40,7 @@ def getStateValues(env):
     for s in range(env.observation_space.n):
         stateActions[s] = np.argmax(finalQMatrix[s])
 
-    return savedStateValues, stateActions
+    return stateActions
 
 def probabilisticQValue(sourceS, action, savedStateValues, env):
     q = 0
