@@ -35,6 +35,8 @@ def getStateActions(env):
     else:
         print("WARN: reached end above min_level")
 
+    print("QM", finalQMatrix)
+
     stateActions = np.zeros(env.observation_space.n, numpy.int)
 
     for s in range(env.observation_space.n):
