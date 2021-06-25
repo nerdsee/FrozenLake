@@ -2,7 +2,7 @@ import gym
 import numpy as np
 
 import dpprob
-import egreedy
+import egreedy_lake
 
 def translate(index: int):
     transvalues = ["LEFT", "DOWN", "RIGT", "-UP-"]
@@ -16,11 +16,12 @@ def printStateActions(stateActions, width, height):
             print(translate(stateActions[w * width + h]), end=" ")
         print()
 
-env = gym.make("FrozenLake8x8-v0", is_slippery=False)
+# env = gym.make("FrozenLake8x8-v0", is_slippery=False)
 # env = gym.make("FrozenLake-v0", is_slippery=False)
+env = gym.make("CartPole-v1")
 
 # stateActions = dpprob.getStateActions(env)
-stateActions = egreedy.getStateActions(env)
+stateActions = egreedy_lake.getStateActions(env)
 
 state = env.reset()
 env.render()
